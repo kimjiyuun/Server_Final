@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/category_type_iv"
+        android:transitionName="categoryImageView"
+        android:src="@drawable/main_course"
+        android:scaleType="fitXY"/>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/bill"
+            android:src="@drawable/bill"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="70dp"
+            />
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/cart"
+        android:src="@drawable/cart"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/category_name"
+        android:text="SOUPS"
+        android:textSize="36sp"
+        android:layout_margin="10dp"
+        android:textColor="#e43f3f"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+    <it.gmariotti.cardslib.library.view.CardListView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.5"
+        android:elevation="0dp"
+        android:id="@+id/myList"
+        />
+</LinearLayout>

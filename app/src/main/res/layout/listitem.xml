@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="10dp"
+    app:cardCornerRadius="10dp "
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ffffff">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:id="@+id/dish_image_view"
+            android:src="@drawable/soup"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="ITEM NAME"
+            android:gravity="center_vertical"
+            android:id="@+id/dish_name_tv"
+            android:textSize="16sp"
+            android:textColor="#e43f3f"
+            android:layout_marginLeft="10dp"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/clear_button"
+            android:background="@drawable/roundedcorners"
+            android:text="Clear"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="20dp"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            />
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="QTY : "
+        android:textColor="#e43f3f"
+        android:textSize="16sp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="50dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dish_quantity_tv"
+        android:text="2"
+        android:textColor="#e43f3f"
+        android:textSize="16sp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="50dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dish_tablename"
+        android:textColor="#e43f3f"
+        android:textSize="16sp"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="100dp"
+        />
+</android.support.v7.widget.CardView>

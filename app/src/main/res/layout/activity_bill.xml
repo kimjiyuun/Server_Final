@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.guneetpc.whatsonmenu.CartActivity"
+    android:orientation="vertical"
+    android:background="#ffffff">
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:id="@+id/cart_rv"
+        />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:background="#e43f3f">
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:text="Finish Service"
+            android:id="@+id/finish"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:background="@drawable/roundedcorners"
+            android:layout_margin="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TOTAL : "
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="80dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/total_tv"
+            android:text="1200"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="20dp"/>
+    </FrameLayout>
+</LinearLayout>
