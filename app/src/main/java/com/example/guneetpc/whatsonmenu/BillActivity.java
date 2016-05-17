@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-
+Button gitbtn;
 public class BillActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
