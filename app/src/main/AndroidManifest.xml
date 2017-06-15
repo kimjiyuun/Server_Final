@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.guneetpc.whatsonmenu">
+    package="com.jiyun.android.server_final">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -25,9 +25,8 @@
         <activity android:name=".AddItemActivity" />
         <activity android:name=".BillActivity" />
         <activity android:name=".OrderActivity" />
-        <activity android:name=".ListViewActivity">
-        </activity>
-        <activity android:name=".MainMainActivity">
+        <activity android:name=".ListViewActivity"/>
+        <activity android:name=".MainActivity">
 
         </activity>
     </application>

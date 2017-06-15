@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.guneetpc.whatsonmenu.SplashActivity"
-    android:background="#e43f3f">
+    tools:context="com.jiyun.android.server_final.SplashActivity"
+    android:background="@color/colorPrimary">
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="300dp"
         android:layout_height="300dp"
@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/app_name_tv"
-        android:text="WHAT'S ON MENU"
+        android:text="SERVER"
         android:textSize="40dp"
         android:textColor="#ffffff"
         android:textStyle="bold"

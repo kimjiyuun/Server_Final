@@ -60,13 +60,7 @@
                 android:textStyle="bold"/>
         </LinearLayout>
     </LinearLayout>
-    <RatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/food_item_rating_bar"
-        style="?android:attr/ratingBarStyleIndicator"
-        android:rating="3"
-        android:layout_gravity="center"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

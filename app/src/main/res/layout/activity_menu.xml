@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#e43f3f"
-    tools:context="com.example.guneetpc.whatsonmenu.MenuActivity"
+    android:background="@color/colorPrimary"
+    tools:context="com.jiyun.android.server_final.MenuActivity"
     android:paddingRight="20dp"
     android:paddingLeft="20dp">
 
@@ -18,54 +18,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#ffffff"
-            android:text="WHAT'S ON MENU"
+            android:text="SERVER"
             android:fontFamily="sans-serif-light"
             android:layout_gravity="center"
             android:id="@+id/logo_textView"
             android:gravity="center"
             android:textSize="28dp"/>
     </FrameLayout>
-
-    <com.rengwuxian.materialedittext.MaterialEditText
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/signin_emailid"
-        android:layout_weight="1"
-        met_floatingLabel="highlight"
-        android:hint="Email Id"
-        android:textColorHint="#ffffff"
-        android:shadowColor="#ffffff"
-        android:textColor="#ffffff"
-        android:textColorLink="#ffffff"
-        android:textColorHighlight="#ffffff"
-        android:layout_marginRight="45dp"
-        android:layout_marginLeft="45dp"
-        />
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.3"></FrameLayout>
-    <com.rengwuxian.materialedittext.MaterialEditText
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="center_horizontal"
-        android:password="true"
-        android:id="@+id/signin_password"
-        android:layout_weight="1"
-        android:hint="Password"
-        android:textColorHint="#ffffff"
-        android:shadowColor="#ffffff"
-        android:textColor="#ffffff"
-        android:textColorLink="#ffffff"
-        android:textColorHighlight="#ffffff"
-        android:layout_marginRight="45dp"
-        android:layout_marginLeft="45dp"
-        />
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5"></FrameLayout>
 
     <Button
         android:layout_width="250dp"
@@ -78,8 +37,8 @@
         android:text="EDIT MENU"
         android:layout_marginRight="10dp"
         android:layout_gravity="center"
-        android:textColor="#ffffff"
-        android:background="@drawable/roundedcorners"/>
+        android:textColor="@color/colorPrimary"
+        android:background="#ffffff"/>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -92,9 +51,9 @@
         android:gravity="center"
         android:textSize="15sp"
         android:id="@+id/manage_order"
-        android:textColor="#ffffff"
+        android:textColor="@color/colorPrimary"
         android:text="MANAGE ORDERS"
-        android:background="@drawable/roundedcorners"/>
+        android:background="#ffffff"/>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -107,9 +66,9 @@
         android:textSize="15sp"
         android:id="@+id/bcustomer"
         android:layout_weight="0.7"
-        android:textColor="#ffffff"
+        android:textColor="@color/colorPrimary"
         android:text="MENU"
-        android:background="@drawable/roundedcorners"
+        android:background="#ffffff"
         />
     <FrameLayout
         android:layout_width="match_parent"
