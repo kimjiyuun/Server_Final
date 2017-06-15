@@ -1,12 +1,9 @@
-package com.example.guneetpc.whatsonmenu;
-
+package com.jiyun.android.server_final;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.ListView;
 
 import com.android.volley.AuthFailureError;
@@ -25,22 +22,21 @@ import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MainMainActivity extends AppCompatActivity {
+public class OrderActivity extends AppCompatActivity {
 
+    ArrayList<String> stringArrayList;
+    static ArrayList<FoodItemModel> foodItemModelArrayListTable1, foodItemModelArrayListTable2, foodItemModelArrayListTable3;
+
+
+
+    ListItemAdapter adapter;
+    DatabaseHelper databaseHelper;
+    int count=0;
 
     ListView lv;
     LayoutInflater l;
     ArrayList<FoodItemModel> dataaa;
-    ListItemAdapter adapter;
-    DatabaseHelper databaseHelper;
-
-    String entry_id1="0";
-    String entry_id2="0";
-    String entry_id3="0";
-    String lastentry_id1="77", lastentry_id2="77", lastentry_id3="77";
-
-    int count=0;
-
+   // OrderActivityAdapter adapter;
 
 
     String addTable1="http://api.thingspeak.com/channels/89560/feeds/last";
@@ -52,9 +48,11 @@ public class MainMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_main);
-
+        setContentView(R.layout.activity_main);
         databaseHelper=new DatabaseHelper(this);
+        foodItemModelArrayListTable1=new ArrayList<>();
+        foodItemModelArrayListTable2=new ArrayList<>();
+        foodItemModelArrayListTable3=new ArrayList<>();
 
         lv=(ListView)findViewById(R.id.lvmain);
         dataaa=new ArrayList<FoodItemModel>();
@@ -63,6 +61,10 @@ public class MainMainActivity extends AppCompatActivity {
         ListItem l1=new ListItem("Chetan");
         ListItem l2=new ListItem("Mann");
 
+        dataaa.add(new FoodItemModel("so1","Organic SouthWestern Corn Chowder","175","A delectable blend of roasted corn,red bell pepper,potatoes and peppers",R.drawable.soup,3,0));
+        dataaa.add(new FoodItemModel("so1","Organic SouthWestern Corn Chowder","175","A delectable blend of roasted corn,red bell pepper,potatoes and peppers",R.drawable.soup,3,0));
+        dataaa.add(new FoodItemModel("so1","Organic SouthWestern Corn Chowder","175","A delectable blend of roasted corn,red bell pepper,potatoes and peppers",R.drawable.soup,3,0));
+
 
 
 
@@ -70,18 +72,22 @@ public class MainMainActivity extends AppCompatActivity {
 
         lv.setAdapter(adapter);
 
+       // adapter=new OrderActivityAdapter(this, 0, dataaa, l);
+       // lv.setAdapter(adapter);
+
+
     }
-
-
-
 
     @Override
     protected void onResume() {
         super.onResume();
-        callAsynchronousTask();
+callAsynchronousTask();
     }
 
+    public void decideWhichTableToCheck()
+    {
 
+    }
 
     public void getOrderFromTable()
     {
@@ -164,18 +170,6 @@ public class MainMainActivity extends AppCompatActivity {
                     int tableNo=count+1;
                     String fld1, fld2, fld3, fld4, fld5, fld6, fld7, fld8;
 
-                    if(tableNo==1) {
-                        entry_id1 = jsonObject.getString("entry_id");
-                    }
-                    else if(tableNo==2)
-                    {
-                        entry_id2 = jsonObject.getString("entry_id");
-                    }
-                    else if(tableNo==3)
-                    {
-                        entry_id3 = jsonObject.getString("entry_id");
-                    }
-
                     fld1=jsonObject.getString("field1");
                     fld2=jsonObject.getString("field2");
                     fld3=jsonObject.getString("field3");
@@ -185,64 +179,17 @@ public class MainMainActivity extends AppCompatActivity {
                     fld7=jsonObject.getString("field7");
                     fld8=jsonObject.getString("field8");
 
-                    switch (tableNo)
-                    {
-                        case 1:
-                            if(!entry_id1.contentEquals(lastentry_id1))
-                            {
-                                decodeDataTable1(fld1);
-                                decodeDataTable1(fld2);
-                                decodeDataTable1(fld3);
-                                decodeDataTable1(fld4);
-                                decodeDataTable1(fld5);
-                                decodeDataTable1(fld6);
-                                decodeDataTable1(fld7);
-                                decodeDataTable1(fld8);
-                            }
-                            break;
-                        case 2:
-                            if(!entry_id2.contentEquals(lastentry_id2))
-                            {
-                                decodeDataTable1(fld1);
-                                decodeDataTable1(fld2);
-                                decodeDataTable1(fld3);
-                                decodeDataTable1(fld4);
-                                decodeDataTable1(fld5);
-                                decodeDataTable1(fld6);
-                                decodeDataTable1(fld7);
-                                decodeDataTable1(fld8);
-                            }
-                            break;
-                        case 3:
-                            if(!entry_id2.contentEquals(lastentry_id2))
-                            {
-                                decodeDataTable1(fld1);
-                                decodeDataTable1(fld2);
-                                decodeDataTable1(fld3);
-                                decodeDataTable1(fld4);
-                                decodeDataTable1(fld5);
-                                decodeDataTable1(fld6);
-                                decodeDataTable1(fld7);
-                                decodeDataTable1(fld8);
-                            }
-                            break;
 
-                    }
+                        decodeDataTable1(fld1);
+                        decodeDataTable1(fld2);
+                        decodeDataTable1(fld3);
+                        decodeDataTable1(fld4);
+                        decodeDataTable1(fld5);
+                        decodeDataTable1(fld6);
+                        decodeDataTable1(fld7);
+                        decodeDataTable1(fld8);
 
 
-
-
-                    if(tableNo==1) {
-                        lastentry_id1 = entry_id1;
-                    }
-                    else if(tableNo==2)
-                    {
-                        lastentry_id2 = entry_id2;
-                    }
-                    else if(tableNo==3)
-                    {
-                        lastentry_id3 =entry_id3;
-                    }
 
 
                     Log.i("valuessssss", fld1+" "+fld2+" "+fld3+" "+fld4+" "+fld5+" "+fld6+" "+fld7+" "+fld8);
@@ -255,8 +202,6 @@ public class MainMainActivity extends AppCompatActivity {
         };
     }
 
-
-
     public void decodeDataTable1(String data)
     {
 
@@ -267,16 +212,17 @@ public class MainMainActivity extends AppCompatActivity {
             int quantitity=Integer.parseInt(data.substring(3, 4));
             Log.i("dataaaaaa", "data :" + data + " id:" + id+" quantitity: "+String.valueOf(quantitity));
 
-           // databaseHelper=new DatabaseHelper(this);
 
             FoodItemModel foodItemModel = databaseHelper.getFoodItemFromId(id, tableName);
             foodItemModel.quantity=quantitity;
 
 
-            //  orderAdapter=new OrderAdapter(getApplicationContext(),foodItemModelArrayListTable1);
-            // recyclerView.setAdapter(orderAdapter);
+
+
+          //  orderAdapter=new OrderAdapter(getApplicationContext(),foodItemModelArrayListTable1);
+           // recyclerView.setAdapter(orderAdapter);
             dataaa.add(foodItemModel);
-            adapter.notifyDataSetChanged();
+
 
             Log.i("arraylisttt", dataaa.toString());
         }
@@ -293,24 +239,6 @@ public class MainMainActivity extends AppCompatActivity {
 
             }
         };
-    }
-
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-
-        return super.onOptionsItemSelected(item);
     }
 
 
